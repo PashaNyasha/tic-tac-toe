@@ -1,0 +1,229 @@
+/* Высота страницы будет равна высоте окна */
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: 'Bahnschrift', Arial, Helvetica, sans-serif;
+    background: linear-gradient(to bottom, rgb(68, 68, 68), rgb(31, 31, 31));
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Подключаю свой шрифт */
+
+@font-face {
+    src: '../fonts/icofont/fonts/icofont.ttf';
+    font-family: 'Icofont';
+}
+
+
+/* Артикль */
+
+.tic-tac-toe {
+    width: 1000px;
+    height: 500px;
+    border: 5px solid rgb(0, 0, 0);
+    margin: 0 auto;
+    position: relative;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
+}
+
+
+/* Блок с формой */
+
+.enter-nickname {
+    width: 500px;
+    height: 70px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -35px 0 0 -250px;
+    border: 3px solid rgb(184, 184, 184)(56, 53, 53);
+    background: rgb(94, 94, 94);
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
+    transition: .3s ease;
+}
+
+.enter-nickname form {
+    width: inherit;
+    display: flex;
+    margin-top: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.enter-nickname form input[type='text'] {
+    height: 30px;
+    width: 250px;
+    border: none;
+    background: none;
+    outline: none;
+    border-radius: 5px 5px 0 0;
+    border-bottom: 3px solid rgb(172, 172, 172);
+    text-indent: 5px;
+    color: rgb(179, 179, 179);
+    font: normal 20px 'Bahnschrift';
+}
+
+.enter-nickname form input[type='submit'] {
+    margin: 5px 0 0 15px;
+    border: none;
+    outline: none;
+    padding: 5px;
+    background: rgb(9, 187, 89);
+    color: #fff;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.enter-nickname form input[type='submit']:hover {
+    color: yellow
+}
+
+.enter-nickname form input[type='submit']:active {
+    transform: scale(.9);
+}
+
+
+/* Убрать форму */
+
+.hide-form {
+    top: -100%;
+}
+
+
+/* ////////////////////////////// */
+
+
+/* Игра и результаты */
+
+.game {
+    height: inherit;
+    display: flex;
+    box-sizing: border-box;
+}
+
+
+/* Канвас */
+
+.game canvas {
+    border-right: 5px solid
+}
+
+
+/* Резалт */
+
+.game .result {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+/* Если высота таблицы больше высоты блока резалт
+добавить вертикальную полосу прокрутки */
+
+.winners {
+    flex: 1;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.winners::-webkit-scrollbar {
+    width: 3px;
+    background: rgb(13, 162, 182);
+}
+
+.winners::-webkit-scrollbar-thumb {
+    background: rgb(214, 48, 19);
+}
+
+.winners table {
+    width: 100%;
+    border-collapse: collapse;
+    border-left: 3px solid rgb(206, 203, 19);
+    color: rgb(94, 187, 31);
+    text-align: center;
+}
+
+.winners table tr {
+    border-bottom: 3px solid rgb(206, 203, 19);
+}
+
+.winners table th,
+.winners table td {
+    width: 50%;
+}
+
+.winners table td {
+    font: bold 25px 'Icofont';
+    padding: 10px;
+    color: rgb(6, 148, 243);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
+}
+
+.winners table td:last-child {
+    border-left: 3px solid rgb(206, 203, 19);
+    color: tomato;
+}
+
+
+/* Тотал */
+
+.total {
+    width: inherit;
+}
+
+.total p {
+    padding: 0;
+    margin: 10px 0 0 0;
+    position: relative;
+    text-indent: 25px;
+    color: rgb(134, 134, 134);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
+}
+
+.total p::before {
+    content: '\ed03';
+    position: absolute;
+    font-family: 'Icofont';
+    top: 0;
+    left: -20px;
+    color: #fff;
+}
+
+.total p:last-child::before {
+    content: '\eeee';
+}
+
+
+/* Блок блокирующий страницу */
+
+.blocked-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .5);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Убирает элементы */
+
+.hide {
+    display: none;
+}

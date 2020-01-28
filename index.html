@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Крестики - нолики</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="fonts/icofont/icofont.min.css">
+</head>
+
+<body>
+    <div class="blocked-box">
+        <!-- Выпадающее окошко с формой -->
+        <div class="enter-nickname">
+            <form action="">
+                <input type="text" name="nickname" id="nickname" placeholder="Меня зовут...">
+                <input type="submit" value="Начать игру">
+            </form>
+        </div>
+    </div>
+    <main>
+        <div class="tic-tac-toe">
+            <!-- Игра -->
+            <div class="game">
+
+                <!-- Холст где отрисовывается игра -->
+                <canvas width="500" height="500"></canvas>
+                <!-- Результаты -->
+                <div class="result">
+                    <div class="winners">
+                        <table>
+                            <thead>
+                                <th>Игрок</th>
+                                <th>Копьютер</th>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="total">
+                        <p class="player">
+                            <span class="player-name">Игрок</span> выиграл
+                            <span class="win-count">0</span class="win-count"> раз</p>
+
+                        <p class="ai"> Компютер выиграл <span class="win-count">0</span> раз</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
